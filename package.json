@@ -2,7 +2,9 @@
   "name": "todo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://inna23.github.io/todoList",
   "dependencies": {
+    "bootstrap": "^4.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1"
@@ -14,10 +16,12 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.5.1",
+    "gh-pages": "^1.1.0",
     "jest": "^21.2.1",
     "redux-devtools-extension": "^2.13.2"
   },
   "scripts": {
+    "deploy": "npm run build&&gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

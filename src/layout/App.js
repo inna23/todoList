@@ -1,37 +1,37 @@
 import React, { Component } from 'react';
+import ToDoControl from '../todoList/ToDoControl';
+import ToDoItem from '../todoList/ToDoItem';
 
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      todoList: [],
-      todoInput: 'abc',
+      todolist: [],
     };
+
+    this.handleToDoCreate = this.handleToDoCreate.bind(this);
   }
 
-  addTodo() {
-    const todoList = this.state.todoList;
-    todoList.push(this.state.todoInput);
-
+  handleToDoCreate(todo) {
     this.setState({
-      todoList,
+      todolist: this.state.todolist.concat(todo),
     });
   }
+
+
   render() {
     return (
-      <div>
-        <input
-          type="text"
-          value={this.state.todoInput}
-          onChange={e => this.setState({ todoInput: e.target.value })}
-        />
-        <button onClick={() => this.addTodo()}>Add</button>
-        <ul>
-          {
-            this.state.todoList.map((el, i) => <li key={i}>{el}</li>)
-          }
-        </ul>
+      <div className="container">
+        <div className="">
+          <div>
+            <ToDoControl onAdd={this.handleToDoCreate} />
+          </div>
+          <div>
+            <ul>
+              {this.state.todolist.map(todo => <ToDoItem name={todo} />)}
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }
