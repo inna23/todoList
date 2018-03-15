@@ -10,6 +10,7 @@ class App extends Component {
     };
 
     this.handleToDoCreate = this.handleToDoCreate.bind(this);
+    this.handleToDoDelete = this.handleToDoDelete.bind(this);
   }
 
   handleToDoCreate(todo) {
@@ -18,6 +19,11 @@ class App extends Component {
     });
   }
 
+  handleToDoDelete(i) {
+    this.setState({
+      todolist: this.state.todolist.filter((el, index) => index != i),
+    });
+  }
 
   render() {
     return (
@@ -28,7 +34,7 @@ class App extends Component {
           </div>
           <div>
             <ul>
-              {this.state.todolist.map(todo => <ToDoItem name={todo} />)}
+              {this.state.todolist.map((todo, i) => <ToDoItem onDelete={this.handleToDoDelete} name={todo} key={i} id={i} />)}
             </ul>
           </div>
         </div>

@@ -19,9 +19,11 @@ class ToDoControl extends Component {
   }
 
   handleInputChange(e) {
-    this.setState({
-      todo: e.target.value,
-    });
+    if (e.target.value.search(/^\s/g) === -1) {
+      this.setState({
+        todo: e.target.value,
+      });
+    }
   }
 
   render() {
