@@ -59,8 +59,8 @@ class Calculator extends Component {
           <button className="btn btn-outline-dark" onClick={() => this.sum()}> Sum </button>
           <button className="btn btn-outline-dark" onClick={() => this.sub()}> Sub </button>
         </div>
-        <h4>{this.state.sum}</h4>
-        <h4>{this.state.sub}</h4>
+        <h4> Sum: {this.state.sum}</h4>
+        <h4>Sub: {this.state.sub}</h4>
       </div>
     );
   }
