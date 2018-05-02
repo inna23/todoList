@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FaTrash from '../../node_modules/react-icons/lib/fa/trash';
+import FaTrash from '../../../node_modules/react-icons/lib/fa/trash';
 
 class ToDoItem extends Component {
   constructor(props) {

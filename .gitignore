@@ -9,6 +9,9 @@
 # testing
 /coverage
 
+# remove all CSS files from the source control
+/src/**/*.css
+
 # production
 /build
 

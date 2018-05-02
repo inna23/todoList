@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ToDoControl from '../todoList/ToDoControl';
-import ToDoItem from '../todoList/ToDoItem';
+import ToDoControl from './ToDoControl';
+import ToDoItem from './ToDoItem';
 
 class App extends Component {
   constructor(props) {
