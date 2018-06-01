@@ -30,7 +30,6 @@ class FormControls extends Component {
         });
         this.props.onAdd(this.state.task);
         console.log('task', this.state.task);
-
       });
   }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import FormControls from '../components/task/formControls';
 import TaskItem from '../components/task/taskItem';
 
@@ -11,15 +12,15 @@ class Page extends Component {
     this.handleItemCreate = this.handleItemCreate.bind(this);
   }
 
-  componentDidMount() {
-    fetch('https://tranquil-spire-74602.herokuapp.com/tasks')
-      .then(response => response.json())
-      .then((response) => {
-        this.setState({
-          taskList: response,
-        });
-      });
-  }
+  // componentDidMount() {
+  //   fetch('https://tranquil-spire-74602.herokuapp.com/tasks')
+  //     .then(response => response.json())
+  //     .then((response) => {
+  //       this.setState({
+  //         taskList: response,
+  //       });
+  //     });
+  // }
 
   handleItemCreate(item) {
     this.setState({
@@ -48,5 +49,6 @@ class Page extends Component {
     );
   }
 }
-
-export default Page;
+const mapStateToProps = () => {};
+const mapDispatchToProps = () => {};
+export default connect(mapStateToProps, mapDispatchToProps)(Page);
