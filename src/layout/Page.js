@@ -1,54 +1,38 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import FormControls from '../components/task/formControls';
+import React from 'react';
+import FormControl from '../components/task/formControls';
 import TaskItem from '../components/task/taskItem';
 
-class Page extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      taskList: [],
-    };
-    this.handleItemCreate = this.handleItemCreate.bind(this);
-  }
+const Page = () => (
+  <div>
+    <div>
+      <h2>
+        Form Control
+      </h2>
+      <FormControl />
+    </div>
+    <div>
+      <h2>
+        Task list
+      </h2>
+      <ul>
+        <li>
+          <TaskItem />
+        </li>
+      </ul>
+    </div>
+  </div>
 
-  // componentDidMount() {
-  //   fetch('https://tranquil-spire-74602.herokuapp.com/tasks')
-  //     .then(response => response.json())
-  //     .then((response) => {
-  //       this.setState({
-  //         taskList: response,
-  //       });
-  //     });
-  // }
 
-  handleItemCreate(item) {
-    this.setState({
-      taskList: this.state.taskList.concat(item),
-    });
-    console.log(this.state.taskList);
-  }
+);
 
-  render() {
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col-xs-12 col-md-6">
-            <h1>Create task</h1>
-            <FormControls onAdd={this.handleItemCreate} />
-          </div>
-          <div className="col-xs-12 col-md-6">
-            <h1>Tasks list</h1>
-            <ul className="list-group">
-              {this.state.taskList.map((task, i) => <TaskItem name={task} key={i} />)
-              }
-            </ul>
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
-const mapStateToProps = () => {};
-const mapDispatchToProps = () => {};
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+export default Page;
+// componentDidMount() {
+//   fetch('https://tranquil-spire-74602.herokuapp.com/tasks')
+//     .then(response => response.json())
+//     .then((response) => {
+//       this.setState({
+//         taskList: response,
+//       });
+//     });
+// }
+

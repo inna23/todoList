@@ -1,10 +1,7 @@
 import { combineReducers } from 'redux';
 import taskList from './taskList';
 
-const rootReducer = combineReducers(
-  taskList,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-);
+const rootReducer = combineReducers({ taskList });
 
 export default rootReducer;
 
