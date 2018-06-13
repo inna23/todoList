@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as TodoActionCreators from '../../actions/action';
 
 class FormControl extends Component {
   constructor(props) {
@@ -47,12 +44,4 @@ class FormControl extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  title: state.taskList.title,
-  description: state.taskList.description,
-});
-
-const mapDaspatchToProps = dispatch => (
-  bindActionCreators(TodoActionCreators, dispatch)
-);
-export default connect(mapStateToProps, mapDaspatchToProps)(FormControl);
+export default FormControl;

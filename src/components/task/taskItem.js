@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as todoActionCreators from '../../actions/action';
 
 class TaskItem extends Component {
   componentDidMount() {
@@ -30,12 +27,5 @@ class TaskItem extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  list: state.taskList.list,
-});
-
-const mapDaspatchToProps = dispatch => (
-  bindActionCreators(todoActionCreators, dispatch)
-);
-export default connect(mapStateToProps, mapDaspatchToProps)(TaskItem);
+export default TaskItem;
 
