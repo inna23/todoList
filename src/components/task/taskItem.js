@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
 class TaskItem extends Component {
   componentDidMount() {
@@ -12,16 +13,16 @@ class TaskItem extends Component {
   render() {
     return (
       <div>
-        <ul>
+        <ListGroup>
           {
             this.props.list.map(task => (
-              <li>
-                <h3>{task.title}</h3>
+              <ListGroupItem color="secondary">
+                <h3 className="h4">{task.title}</h3>
                 <p>{task.description}</p>
-              </li>
+              </ListGroupItem>
             ))
           }
-        </ul>
+        </ListGroup>
       </div>
     );
   }

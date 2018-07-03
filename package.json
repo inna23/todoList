@@ -4,16 +4,16 @@
   "private": true,
   "homepage": "https://inna23.github.io/todoList",
   "dependencies": {
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.1.1",
     "node-sass-chokidar": "^1.2.2",
     "npm": "^6.0.0",
     "npm-run-all": "^4.1.2",
-    "react": "^16.2.0",
-    "react-redux": "^5.0.7",
-    "react-dom": "^16.2.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "react-icons": "^2.2.7",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.1",
+    "reactstrap": "^6.2.0",
     "redux": "^3.7.2"
   },
   "devDependencies": {

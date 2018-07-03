@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Form, FormGroup, Label, Input, Button, Col } from 'reactstrap';
 
 class FormControl extends Component {
   constructor(props) {
@@ -35,11 +36,23 @@ class FormControl extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleCreateTask}>
-        <input onChange={this.onChangeTitle} />
-        <textarea onChange={this.onChangrDescription} />
-        <button>Create</button>
-      </form>
+      <Form onSubmit={this.handleCreateTask} className="bg-light p-3 mb-4">
+        <FormGroup row>
+          <Label for="title" sm={2}> Title </Label>
+          <Col sm={10}>
+            <Input type="text" id="title" onChange={this.onChangeTitle} />
+          </Col>
+        </FormGroup>
+        <FormGroup row>
+          <Label for="description" sm={2}> Description </Label>
+          <Col sm={10}>
+            <Input type="textarea" id="description" onChange={this.onChangrDescription} />
+          </Col>
+        </FormGroup>
+        <Col sm={{ size: 10, offset: 2 }}>
+          <Button block color="secondary" size="lg" >Create</Button>{' '}
+        </Col>
+      </Form>
     );
   }
 }
